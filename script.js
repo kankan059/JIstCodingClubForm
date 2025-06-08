@@ -248,9 +248,32 @@ let kk = () => {
         stagger : 0.2
     })
   };
+  let gsapOutro = () =>{
+     let st2 = gsap.timeline({
+        scrollTrigger : {
+            trigger : ".outro",
+            scroller : "body",
+            start : "top 70%",
+            end : "top -10%",
+            scrub: 2,
+        }
+    })
+    st2.from('.outro',{
+      opacity: 0,
+      duration : 0.4,
+      scale: 0.7,
+      stagger: 0.4
+    })
+    st2.from('#footer',{
+      scale: 0.9,
+      opacity: 0,
+      duration: 0.8
+    })
+  }
 
   gsapIntro();
   gsapSecond();
+  gsapOutro();
 };
 
 

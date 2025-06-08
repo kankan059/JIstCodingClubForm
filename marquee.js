@@ -1,5 +1,5 @@
 function setupMarqueeAnimation() {
-    const marqueeItems = gsap.utils.toArray(".marquee h1");
+    const marqueeItems = gsap.utils.toArray(".marquee h2");
     if (marqueeItems.length > 0) {
         const t1 = horizontalMarquee(marqueeItems, {
             repeat: -1,
