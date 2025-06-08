@@ -11,7 +11,28 @@ body {
     color: white;
     overflow-x: hidden;
 }
+@font-face {
+    font-family: "SpeedrusherRegular";
+    src: url(/SpeedrusherRegular-4nqrD.otf);
+    
+}
 
+@font-face {
+    font-family: "ShutdownBrush";
+    src: url(/ShutdownBrushDemo-7OAnR.otf);
+}
+#first-part-second h4 span {
+    font-family: "ShutdownBrush";
+}
+#first-part-second{
+    box-shadow: inset 0 0 3px greenyellow , inset 0 0 30px ;
+    padding: 50px;
+}
+#first-part-second h4 {
+    text-transform: capitalize;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    /* text-shadow: 0 0 2px black , 0 0 5px white; */
+}
 #container{
     width: 100%;
 }
@@ -29,9 +50,26 @@ body {
     font-size: 3.5vw;
     text-align: center;
 }
+#intro .intro-h1 h1{
+    font-family: 'SpeedrusherRegular';
+    text-shadow: 1px 1px 15px rgb(0, 0, 255), 1px 1px 30px rgb(255, 255, 255);
+    /* animation: glow 1s ease-in-out alternate infinite; */
+}
+
+@keyframes glow {
+    0%{
+        text-shadow: inset 1px 1px 15px rgb(255, 255, 255), inset 1px 1px 50px rgb(255, 255, 255);
+    }
+    100%{
+        text-shadow: 1px 1px 5px rgb(0, 0, 0), 1px 1px 50px rgb(255, 255, 255);
+    }
+}
+
+
 
 #intro>img {
     height: 600px;
+    filter: drop-shadow( 0px 5px 40px rgba(249, 229, 229, 0.807));
 }
 
 #second-page {
@@ -103,11 +141,13 @@ body {
     overflow: hidden;
 }
 
+
 .card-img img {
     width: 100%;
     height: 100%;
     transform: scale(2);
     object-fit: cover;
+    /* filter: blur(12px); */
 }
 
 .card-content {
@@ -190,7 +230,7 @@ p {
 
     #intro .intro-h1 {
         padding-bottom: 100px;
-        font-size: 9vw;
+        font-size: 6.2vw;
         text-align: center;
     }
 
