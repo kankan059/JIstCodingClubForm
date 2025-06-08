@@ -1,4 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
+let ezaz = () => {
+    document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, SplitText);
 
     const lenis = new Lenis();
@@ -176,3 +177,46 @@ cards.forEach((card,index) =>{
   });
     
 });
+
+}
+
+let kk = () => {
+    let gsapIntro = () => {
+        document.querySelector('#intro > img').addEventListener('mouseenter' , ()=>{
+            gsap.to('#intro > img' , {
+                scale : 0.9,
+                duration: 0.4
+            })
+        })
+        document.querySelector('#intro > img').addEventListener('mouseleave' , ()=>{
+            gsap.to('#intro > img' , {
+                scale : 1,
+                duration : 0.3
+            })
+        })
+
+        gsap.from("#intro .intro-h1 > h1" ,{
+            y : 900,
+            duration: 1,
+            opacity: 0,
+            stagger : 0.3
+        })
+        gsap.from("#intro > img" ,{
+            scale : 0.5,
+            duration: 1,
+            opacity: 0,
+            stagger : 0.3
+        })
+
+    }
+
+
+
+
+
+
+    gsapIntro();
+}
+
+ezaz();
+kk();
