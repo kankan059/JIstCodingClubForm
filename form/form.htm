@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Core Member Fill Up Form</title>
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+
+<body>
+    <div class="form-fill">
+
+
+        <form action="" class="left-part">
+
+
+
+
+
+            <div class="fill-up">
+                <h2>Submit your info</h2>
+                <hr>
+                <div id="progress-bar" style="width: 0%;
+                    height: 4px;
+                    background: linear-gradient(90deg, #C1FF72, #5CE1E6);
+                    transition: width 0.4s ease;
+                    margin-bottom: 10px;
+                    border-radius: 2px;
+                    ">
+                </div>
+                <div id="form-status" style="margin-bottom: 15px; font-weight: 600;"></div>
+            </div>
+            <input type="text" id="name" placeholder="Name" class="name" required>
+            <input type="email" id="email" placeholder="Email" class="email" required>
+            <input type="number" id="phone" placeholder="Phone Number" class="phone" required>
+            <input type="text" id="department" placeholder="Department" class="department" required>
+            <input type="number" id="year" placeholder="Year" class="year" required>
+            <input type="text" id="position" placeholder="Position applying for" class="position" required>
+            <input type="text" id="linkedin" placeholder="LinkedIn Profile" class="linkedin">
+            <input type="text" id="github" placeholder="GitHub Profile" class="github">
+            <textarea name="skills" id="skills" placeholder=" Your skills for applying in field" class="skills"
+                required></textarea>
+            <button type="submit" class="submit" id="submit">Submit Form <img src="assets/arrow_icon.png"> </button>
+
+
+        </form>
+        <audio id="success-audio" src="/audio/congrates audio.mp3" hidden></audio>
+        <audio id="name-audio" src="/audio/name-audio.mp3" hidden></audio>
+        <audio id="email-audio" src="/audio/email.mp3" hidden></audio>
+        <audio id="phone-audio" src="/audio/phone.mp3" hidden></audio>
+        <audio id="depart-audio" src="/audio/department.mp3" hidden></audio>
+        <audio id="year-audio" src="/audio/year.mp3" hidden></audio>
+        <audio id="position-audio" src="/audio/position.mp3" hidden></audio>
+        <audio id="skills-audio" src="/audio/skills.mp3" hidden></audio>
+        <div class="right-part">
+            <img src="/image/1749276251718-removebg-preview.png" alt="">
+        </div>
+        <div id="progress-bar" style="width: 0%;
+                    height: 4px;
+                    background: linear-gradient(90deg, #C1FF72, #5CE1E6);
+                    transition: width 0.4s ease;
+                    margin-bottom: 10px;
+                    border-radius: 2px;
+                    ">
+        </div>
+        <div id="form-status" style="margin-bottom: 15px; font-weight: 600;"></div>
+    </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-analytics.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/11.9.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCKyQUsn5UJPf01eel09VCmzIlInIJHa3U",
+            authDomain: "coding-club-formfillup.firebaseapp.com",
+            databaseURL: "https://coding-club-formfillup-default-rtdb.firebaseio.com",
+            projectId: "coding-club-formfillup",
+            storageBucket: "coding-club-formfillup.appspot.com",
+            messagingSenderId: "152869476154",
+            appId: "1:152869476154:web:6e1970c3eb215a0bdda203",
+            measurementId: "G-3VKW32KY9J"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase(app);
+        const audioCongrates = document.querySelector('#success-audio');
+        const submitBtn = document.getElementById("submit");
+        const progressBar = document.getElementById("progress-bar");
+        const statusBox = document.getElementById("form-status");
+        const form = document.querySelector("form");
+
+        submitBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+
+
+            progressBar.style.width = "0%";
+            progressBar.style.display = "block";
+            setTimeout(() => {
+                progressBar.style.width = "70%";
+            }, 100);
+
+            statusBox.innerText = "";
+
+
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const department = document.getElementById("department").value.trim();
+            const year = document.getElementById("year").value.trim();
+            const position = document.getElementById("position").value.trim();
+            const linkedin = document.getElementById("linkedin").value.trim();
+            const github = document.getElementById("github").value.trim();
+            const skills = document.getElementById("skills").value.trim();
+
+
+            if (!name) return showError("Name is required", "name");
+            if (!email) return showError("Email is required", "email");
+            if (!phone) return showError("Phone number is required", "phone");
+            if (!department) return showError("Department is required", "department");
+            if (!year) return showError("Year is required", "year");
+            if (!position) return showError("Position is required", "position");
+            if (!skills) return showError("Please describe your technical skills", "skills");
+
+
+
+            set(ref(db, "users/" + name), {
+                name,
+                email,
+                phone,
+                department,
+                year,
+                position,
+                skills,
+                github,
+                linkedin,
+            })
+                .then(() => {
+                    progressBar.style.width = "100%";
+                    setTimeout(() => (progressBar.style.display = "none"), 500);
+                    statusBox.style.color = "lime";
+                    statusBox.innerText = "✅ Form submitted successfully!";
+                    form.reset();
+                    audioCongrates.play();
+                    setTimeout(() => {
+                        statusBox.innerText = "" ;
+                        location.href = "/index.html";
+                    }, 5000);
+                    
+                })
+                .catch((error) => {
+                    progressBar.style.display = "none";
+                    showError("❌ Error: " + error.message);
+                });
+        });
+
+        function showError(message, fieldId) {
+            // Hide progress bar
+            progressBar.style.display = "none";
+
+            // Show error message
+            statusBox.style.color = "#B43636";
+            statusBox.innerText = "⚠️ " + message;
+
+            // Play error audio (common sound)
+            const audioMap = {
+                name: "name-audio",
+                email: "email-audio",
+                phone: "phone-audio",
+                department: "depart-audio",
+                year: "year-audio",
+                position: "position-audio",
+                skills: "skills-audio"
+            };
+            const audioId = audioMap[fieldId];
+            const audio = document.getElementById(audioId);
+            if (audio) audio.play();
+
+
+            // Highlight input field
+            if (fieldId) {
+                const field = document.getElementById(fieldId);
+                field.style.border = "2px solid red";
+                field.focus();
+            }
+
+            // Clear error after 5 seconds
+            setTimeout(() => {
+                statusBox.innerText = "";
+                if (fieldId) {
+                    const field = document.getElementById(fieldId);
+                    field.style.border = "";
+                }
+            }, 5000);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
