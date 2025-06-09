@@ -226,7 +226,7 @@ let kk = () => {
     // });
     st.to("#intro .intro-h1 > h1", {
       opacity: 0,
-      ease: "power3.out"
+      ease: "power3.out",
     });
 
     let st2 = gsap.timeline({
@@ -261,44 +261,45 @@ let kk = () => {
       duration: 0.4,
       scale: 0.7,
       stagger: 0.4,
-      ease: "power3.out"
+      ease: "power3.out",
     });
     st2.from("#footer", {
       scale: 0.9,
       opacity: 0,
       duration: 0.8,
-      ease: "power3.out"
+      ease: "power3.out",
     });
   };
 
   function gsapStructure() {
-    let st2 = gsap.timeline({
+    let st3 = gsap.timeline({
       scrollTrigger: {
         trigger: ".grid",
         scroller: "body",
         start: "top 70%",
         end: "top 10%",
-        scrub: 2,
-        markers : true
+        scrub: 3,
+        markers: true,
       },
     });
-    st2.from('.grid .card1',{
+    st3.from(".grid .card1", {
+      x: 600,
       opacity: 0,
       duration: 0.7,
       ease: "power3.out",
-      stagger : 0.8,
-      x: 600,
+      stagger: 0.8,
       // scale: 0.8
-    })
-    st2.to('.grid .card1',{
-      // scale: 1
-    })
+    });
   }
 
   gsapIntro();
-  gsapSecond();
+  // gsapSecond();
   gsapOutro();
-  gsapStructure();
+  // gsapStructure();
+  window.addEventListener("DOMContentLoaded", () => {
+    gsap.registerPlugin(ScrollTrigger); // Important!
+    gsapStructure();
+  });
 };
 
 // let button = document.querySelector('.container')
