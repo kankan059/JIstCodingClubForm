@@ -219,63 +219,87 @@ let kk = () => {
         scrub: 2,
       },
     });
-    st.from("#second-page #first-part-second > h4", {
-      scale: 0.4,
+    // st.from("#second-page #first-part-second > h4", {
+    //   scale: 0.4,
+    //   opacity: 0,
+    //   ease: "power3.out"
+    // });
+    st.to("#intro .intro-h1 > h1", {
       opacity: 0,
+      ease: "power3.out"
     });
-    st.to('#intro .intro-h1 > h1',{
-        opacity: 0,
-    })
 
     let st2 = gsap.timeline({
-        scrollTrigger : {
-            trigger : ".cards",
-            scroller : "body",
-            start : "top 50%",
-            end : "top 20%",
-            scrub: 2,
-
-        }
-    })
-    st2.from('.cards .card',{
-        opacity: 0,
-        duration : 0.6,
-        stagger : 0.2
-    })
-    st2.to('#second-page #first-part-second > h4',{
-        opacity: 0,
-        duration : 0.61,
-        stagger : 0.2
-    })
-  };
-  let gsapOutro = () =>{
-     let st2 = gsap.timeline({
-        scrollTrigger : {
-            trigger : ".outro",
-            scroller : "body",
-            start : "top 70%",
-            end : "top -10%",
-            scrub: 2,
-        }
-    })
-    st2.from('.outro',{
+      scrollTrigger: {
+        trigger: ".cards",
+        scroller: "body",
+        start: "top 70%",
+        end: "top 20%",
+        scrub: 2,
+        // markers: true,
+      },
+    });
+    st2.from(".cards .card", {
       opacity: 0,
-      duration : 0.4,
+      duration: 0.6,
+      ease: "power3.out",
+      stagger: 0.2,
+    });
+  };
+  let gsapOutro = () => {
+    let st2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".outro",
+        scroller: "body",
+        start: "top 70%",
+        end: "top -10%",
+        scrub: 2,
+      },
+    });
+    st2.from(".outro", {
+      opacity: 0,
+      duration: 0.4,
       scale: 0.7,
-      stagger: 0.4
-    })
-    st2.from('#footer',{
+      stagger: 0.4,
+      ease: "power3.out"
+    });
+    st2.from("#footer", {
       scale: 0.9,
       opacity: 0,
-      duration: 0.8
+      duration: 0.8,
+      ease: "power3.out"
+    });
+  };
+
+  function gsapStructure() {
+    let st2 = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".grid",
+        scroller: "body",
+        start: "top 70%",
+        end: "top 10%",
+        scrub: 2,
+        markers : true
+      },
+    });
+    st2.from('.grid .card1',{
+      opacity: 0,
+      duration: 0.7,
+      ease: "power3.out",
+      stagger : 0.8,
+      x: 600,
+      // scale: 0.8
+    })
+    st2.to('.grid .card1',{
+      // scale: 1
     })
   }
 
   gsapIntro();
   gsapSecond();
   gsapOutro();
+  gsapStructure();
 };
-
 
 // let button = document.querySelector('.container')
 
