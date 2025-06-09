@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cairo');
+
 * {
     margin: 0;
     padding: 0;
@@ -11,35 +16,65 @@ body {
     color: white;
     overflow-x: hidden;
 }
+
 @font-face {
     font-family: "SpeedrusherRegular";
     src: url(/font-families/SpeedrusherRegular-4nqrD.otf);
-    
+
 }
 
 @font-face {
     font-family: "ShutdownBrush";
     src: url(/font-families/ShutdownBrushDemo-7OAnR.otf);
 }
+
 #first-part-second h4 span {
     font-family: "ShutdownBrush";
     color: rgb(13, 173, 13);
 }
-#first-part-second{
-    box-shadow: inset 0 0 3px greenyellow , inset 0 0 30px ;
+
+#first-part-second {
+    box-shadow: inset 0 0 3px greenyellow, inset 0 0 30px;
     padding: 50px;
 }
+
 #first-part-second h4 {
     text-transform: capitalize;
     font-family: 'Arial Narrow Bold', sans-serif;
 
     /* text-shadow: 0 0 2px black , 0 0 5px white; */
 }
-#container{
+
+#container {
     width: 100%;
     /* background: radial-gradient(circle at center , rgb(0, 0, 0), rgb(0, 0, 0) , rgb(3, 40, 14)); */
 
 }
+
+.hero-title {
+    width: 100%;
+    text-align: center;
+    margin-top: 0em;
+    font-family: "Inter", "Fredoka", "Montserrat";
+}
+
+.hero-title>h2 {
+    background-image: url(https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3M3FyZmN3Mng2M3pubDQ3b3F4Z3VqdjJybWJ4NTFxZ2IwNHZicDAzeCZlcD12MV9naWZzX3JlbGF0ZWQmY3Q9Zw/UE6s2yrNzpkDS/giphy.gif);
+    background-size: cover;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    text-transform: uppercase;
+    font-size: 8vw;
+    line-height: 0.75;
+    margin: 10px 0;
+}
+
+.hero-title>h2 .top,
+.hero-title>h2 .bottom {
+    display: block;
+}
+
 
 #container #intro {
     display: flex;
@@ -56,17 +91,19 @@ body {
     font-size: 3.5vw;
     text-align: center;
 }
-#intro .intro-h1 h1{
+
+#intro .intro-h1 h1 {
     font-family: 'SpeedrusherRegular';
     text-shadow: 1px 1px 15px rgb(0, 0, 255), 1px 1px 30px rgb(255, 255, 255);
     /* animation: glow 1s ease-in-out alternate infinite; */
 }
 
 @keyframes glow {
-    0%{
+    0% {
         text-shadow: inset 1px 1px 15px rgb(255, 255, 255), inset 1px 1px 50px rgb(255, 255, 255);
     }
-    100%{
+
+    100% {
         text-shadow: 1px 1px 5px rgb(0, 0, 0), 1px 1px 50px rgb(255, 255, 255);
     }
 }
@@ -125,6 +162,7 @@ body {
     font-weight: 600;
     margin-right: 30px;
 }
+
 .marquee>h2 {
     display: none;
     white-space: nowrap;
@@ -132,7 +170,8 @@ body {
     text-transform: uppercase;
     font-weight: 600;
     margin-right: 30px;
-    font-family: "ShutdownBrush";
+    /* font-family: "ShutdownBrush"; */
+    font-family: "Fredoka";
     text-shadow: 0 0 7px white;
 }
 
@@ -176,20 +215,22 @@ body {
     justify-content: center;
     z-index: 1;
 }
-.card-content .card-title > h1::before{
+
+.card-content .card-title>h1::before {
     content: "";
     height: 100%;
     width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     /* filter: blur(20px); */
     /* backdrop-filter: blur(px); */
     z-index: -1;
     border-radius: 50px;
 }
-.card-content .card-title > h1{
+
+.card-content .card-title>h1 {
     position: relative;
     color: #ffffff;
     font-family: "Edu SA Hand";
@@ -199,6 +240,7 @@ body {
     padding: 5px;
     text-shadow: 0 0 2px black, 0 0 4px black;
 }
+
 .card-content .card-title {
     width: 100%;
     position: absolute;
@@ -220,7 +262,7 @@ body {
     border-radius: 50px;
     /* padding: 10px; */
     color: #ffffff;
-    text-shadow: 0 0 1px rgb(255, 255, 255) , 0 0 3px rgb(0, 87, 29) , 0 0 6px rgb(0, 255, 42);
+    text-shadow: 0 0 1px rgb(255, 255, 255), 0 0 3px rgb(0, 87, 29), 0 0 6px rgb(0, 255, 42);
     /* overflow: hidden; */
 }
 
@@ -274,279 +316,347 @@ p {
     line-height: 1.25;
 }
 
-.type--A{
-  --line_color : #ff9f31 ;
-  --font-color : yellow;
-  --back_color : #158291  ;
-  --shadow : gray;
+.type--A {
+    --line_color: #ff9f31;
+    --font-color: yellow;
+    --back_color: #158291;
+    --shadow: gray;
 }
-.button{
-    position : relative ;
-    z-index : 0 ;
-    width : 240px ;
-    height : 56px ;
-    text-decoration : none ;
-    font-size : 14px ; 
-    font-weight : bold ;
-    color : var(--font-color) ;
-    letter-spacing : 2px ;
-    transition : all .3s ease ;
-    box-shadow: 0 3px 13px gray , 0 3px 15px white;
+
+.button {
+    position: relative;
+    z-index: 0;
+    width: 240px;
+    height: 56px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--font-color);
+    letter-spacing: 2px;
+    transition: all .3s ease;
+    box-shadow: 0 3px 13px gray, 0 3px 15px white;
     border-radius: 26px;
     text-transform: uppercase;
 }
-.button__text{
-    display : flex ;
-    justify-content : center ;
-    align-items : center ;
-    width : 100% ;
-    height : 100% ;
+
+.button__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
+
 .button::before,
 .button::after,
 .button__text::before,
-.button__text::after{
-    content : '' ;
-    position : absolute ;
-    height : 3px ;
-    border-radius : 2px ;
-    background : var(--line_color) ;
-    transition : all .5s ease ;
+.button__text::after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--line_color);
+    transition: all .5s ease;
 }
-.button::before{
-    top : 0 ;
-    left : 54px ;
-    width : calc( 100% - 56px * 2 - 16px ) ;
+
+.button::before {
+    top: 0;
+    left: 54px;
+    width: calc(100% - 56px * 2 - 16px);
 }
-.button::after{
-    top : 0 ;
-    right : 54px ;
-    width : 8px ;
+
+.button::after {
+    top: 0;
+    right: 54px;
+    width: 8px;
 }
-.button__text::before{
-    bottom : 0 ;
-    right : 54px ;
-    width : calc( 100% - 56px * 2 - 16px ) ;
+
+.button__text::before {
+    bottom: 0;
+    right: 54px;
+    width: calc(100% - 56px * 2 - 16px);
 }
-.button__text::after{
-    bottom : 0 ;
-    left : 54px ;
-    width : 8px ;
+
+.button__text::after {
+    bottom: 0;
+    left: 54px;
+    width: 8px;
 }
-.button__line{
-    position : absolute ;
-    top : 0 ;
-    width : 56px ;
-    height : 100% ;
-    overflow : hidden ;
+
+.button__line {
+    position: absolute;
+    top: 0;
+    width: 56px;
+    height: 100%;
+    overflow: hidden;
 }
-.button__line::before{
-    content : '' ;
-    position : absolute ;
-    top : 0 ;
-    width : 150% ;
-    height : 100% ;
-    box-sizing : border-box ;
-    border-radius : 300px ;
-    border : solid 3px var(--line_color) ;
+
+.button__line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 150%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 300px;
+    border: solid 3px var(--line_color);
 }
+
 .button__line:nth-child(1),
-.button__line:nth-child(1)::before{
-    left : 0 ;
+.button__line:nth-child(1)::before {
+    left: 0;
 }
+
 .button__line:nth-child(2),
-.button__line:nth-child(2)::before{
-    right : 0 ;
+.button__line:nth-child(2)::before {
+    right: 0;
 }
-.button:hover{
-    letter-spacing : 6px ;
+
+.button:hover {
+    letter-spacing: 6px;
 }
+
 .button:hover::before,
-.button:hover .button__text::before{
-    width : 8px ;
+.button:hover .button__text::before {
+    width: 8px;
 }
+
 .button:hover::after,
-.button:hover .button__text::after{
-    width : calc( 100% - 56px * 2 - 16px ) ;
+.button:hover .button__text::after {
+    width: calc(100% - 56px * 2 - 16px);
 }
+
 .button__drow1,
-.button__drow2{
-    position : absolute ;
-    z-index : -1 ;
-    border-radius : 16px ;
-    transform-origin : 16px 16px ;
+.button__drow2 {
+    position: absolute;
+    z-index: -1;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
 }
-.button__drow1{
-    top : -16px ;
-    left : 40px ;
-    width : 32px ;
-    height : 0;
-    transform : rotate( 30deg ) ;
+
+.button__drow1 {
+    top: -16px;
+    left: 40px;
+    width: 32px;
+    height: 0;
+    transform: rotate(30deg);
 }
-.button__drow2{
-    top : 44px ;
-    left : 77px ;
-    width : 32px ;
-    height : 0 ;
-    transform : rotate(-127deg ) ;
+
+.button__drow2 {
+    top: 44px;
+    left: 77px;
+    width: 32px;
+    height: 0;
+    transform: rotate(-127deg);
 }
+
 .button__drow1::before,
 .button__drow1::after,
 .button__drow2::before,
-.button__drow2::after{
-    content : '' ;
-    position : absolute ;
+.button__drow2::after {
+    content: '';
+    position: absolute;
 }
-.button__drow1::before{
-    bottom : 0 ;
-    left : 0 ;
-    width : 0 ;
-    height : 32px ;
-    border-radius : 16px ;
-    transform-origin : 16px 16px ;
-    transform : rotate( -60deg ) ;
+
+.button__drow1::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-60deg);
 }
-.button__drow1::after{
-    top : -10px ;
-    left : 45px ;
-    width : 0 ;
-    height : 32px ;
-    border-radius : 16px ;
-    transform-origin : 16px 16px ;
-    transform : rotate( 69deg ) ;
+
+.button__drow1::after {
+    top: -10px;
+    left: 45px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(69deg);
 }
-.button__drow2::before{
-    bottom : 0 ;
-    left : 0 ;
-    width : 0 ;
-    height : 32px ;
-    border-radius : 16px ;
-    transform-origin : 16px 16px ;
-    transform : rotate( -146deg ) ;
+
+.button__drow2::before {
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-146deg);
 }
-.button__drow2::after{
-    bottom : 26px ;
-    left : -40px ;
-    width : 0 ;
-    height : 32px ;
-    border-radius : 16px ;
-    transform-origin : 16px 16px ;
-    transform : rotate( -262deg ) ;
+
+.button__drow2::after {
+    bottom: 26px;
+    left: -40px;
+    width: 0;
+    height: 32px;
+    border-radius: 16px;
+    transform-origin: 16px 16px;
+    transform: rotate(-262deg);
 }
+
 .button__drow1,
 .button__drow1::before,
 .button__drow1::after,
 .button__drow2,
 .button__drow2::before,
-.button__drow2::after{
-    background : var( --back_color ) ;
+.button__drow2::after {
+    background: var(--back_color);
 }
-.button:hover .button__drow1{
-    animation : drow1 ease-in .06s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow1 {
+    animation: drow1 ease-in .06s;
+    animation-fill-mode: forwards;
 }
-.button:hover .button__drow1::before{
-    animation : drow2 linear .08s .06s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow1::before {
+    animation: drow2 linear .08s .06s;
+    animation-fill-mode: forwards;
 }
-.button:hover .button__drow1::after{
-    animation : drow3 linear .03s .14s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow1::after {
+    animation: drow3 linear .03s .14s;
+    animation-fill-mode: forwards;
 }
-.button:hover .button__drow2{
-    animation : drow4 linear .06s .2s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow2 {
+    animation: drow4 linear .06s .2s;
+    animation-fill-mode: forwards;
 }
-.button:hover .button__drow2::before{
-    animation : drow3 linear .03s .26s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow2::before {
+    animation: drow3 linear .03s .26s;
+    animation-fill-mode: forwards;
 }
-.button:hover .button__drow2::after{
-    animation : drow5 linear .06s .32s ;
-    animation-fill-mode : forwards ;
+
+.button:hover .button__drow2::after {
+    animation: drow5 linear .06s .32s;
+    animation-fill-mode: forwards;
 }
-@keyframes drow1{
-    0%   { height : 0 ; }
-    100% { height : 100px ; }
+
+@keyframes drow1 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 100px;
+    }
 }
-@keyframes drow2{
-    0%   { width : 0 ; opacity : 0 ;}
-    10%  { opacity : 0 ;}
-    11%  { opacity : 1 ;}
-    100% { width : 120px ; }
+
+@keyframes drow2 {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    11% {
+        opacity: 1;
+    }
+
+    100% {
+        width: 120px;
+    }
 }
-@keyframes drow3{
-    0%   { width : 0 ; }
-    100% { width : 80px ; }
+
+@keyframes drow3 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 80px;
+    }
 }
-@keyframes drow4{
-    0%   { height : 0 ; }
-    100% { height : 120px ; }
+
+@keyframes drow4 {
+    0% {
+        height: 0;
+    }
+
+    100% {
+        height: 120px;
+    }
 }
-@keyframes drow5{
-    0%   { width : 0 ; }
-    100% { width : 124px ; }
+
+@keyframes drow5 {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 124px;
+    }
 }
 
 
-.container{
-    width : 100% ;
-    height : 300px ;
-    display : flex ;
-    flex-direction : column ;
-    justify-content : center ;
-    align-items : center ;
-}
-.button:not(:last-child){
-  margin-bottom : 64px ;
+.container {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-  #footer {
+.button:not(:last-child) {
+    margin-bottom: 64px;
+}
+
+#footer {
     background-color: #111;
     color: white;
     padding: 30px 20px;
     text-align: center;
     font-family: 'Segoe UI', sans-serif;
-  }
+}
 
-  #footer h3 {
+#footer h3 {
     font-size: 20px;
     margin-bottom: 10px;
-  }
+}
 
-  #footer a {
+#footer a {
     color: #00acee;
     text-decoration: none;
     margin: 5px;
     display: inline-block;
-  }
+}
 
-  #footer span {
+#footer span {
     font-weight: bold;
-  }
+}
 
-  #footer .contact,
-  #footer .members {
+#footer .contact,
+#footer .members {
     margin: 15px 0;
-  }
+}
 
-  #footer .address {
+#footer .address {
     color: #aaa;
     font-size: 14px;
     margin-top: 10px;
-  }
+}
 
-  #footer .copyright {
+#footer .copyright {
     font-size: 13px;
     color: #666;
     margin-top: 20px;
-  }
+}
 
 
 @media (max-width: 834px) {
     .marquee>h2 {
         display: flex;
     }
+
     #intro>img {
         height: 430px;
     }
@@ -606,10 +716,15 @@ p {
         letter-spacing: -0.1rem;
         line-height: 1.25;
     }
-    .card-img img {
-    transform: scale(2);
-    width:100%;
-    height: 100%;
-  }
 
+    .card-img img {
+        transform: scale(2);
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-title>h2 {
+        font-size: 10vw;
+        padding-bottom: 20px;
+    }
 }

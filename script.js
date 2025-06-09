@@ -169,7 +169,7 @@ let ezaz = () => {
 
     gsap.to(marqueeContent, {
       x: -marqueeWidth,
-      duration: 18,
+      duration: 7,
       ease: "linear",
       repeat: -1,
     });
@@ -195,7 +195,7 @@ let kk = () => {
         });
       });
 
-    gsap.from("#intro .intro-h1 > h1", {
+    gsap.from("#intro .intro-h1 .hero-title > h2", {
       y: 900,
       duration: 1,
       opacity: 0,
