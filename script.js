@@ -279,27 +279,30 @@ let kk = () => {
         start: "top 70%",
         end: "top 10%",
         scrub: 3,
-        markers: true,
+        // markers: true,
       },
     });
-    st3.from(".grid .card1", {
-      x: 600,
-      opacity: 0,
-      duration: 0.7,
-      ease: "power3.out",
-      stagger: 0.8,
-      // scale: 0.8
-    });
+    st3.fromTo(
+      ".grid .card1",
+      {
+        x: 600,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.8,
+        ease: "power4.out",
+      }
+    );
   }
 
   gsapIntro();
   // gsapSecond();
   gsapOutro();
   // gsapStructure();
-  window.addEventListener("DOMContentLoaded", () => {
-    gsap.registerPlugin(ScrollTrigger); // Important!
-    gsapStructure();
-  });
+  gsapStructure();
 };
 
 // let button = document.querySelector('.container')
