@@ -37,7 +37,8 @@
             <input type="text" id="department" placeholder="Department" class="department" required>
             <input type="number" id="year" placeholder="Academic year" class="year" required>
             <!-- <input type="text" id="position" placeholder="Position applying for" class="position" required> -->
-             <input type="text" id="position" placeholder="Position? (App ,Web, Event, Project, Design)" class="position" required>
+            <input type="text" id="position" placeholder="Position? (App ,Web, Event, Project, Design)" class="position"
+                 required>
             <input type="text" id="linkedin" placeholder="LinkedIn Profile" class="linkedin">
             <input type="text" id="github" placeholder="GitHub Profile" class="github">
             <textarea name="skills" id="skills" placeholder=" Your skills for applying in field" class="skills"
@@ -85,14 +86,13 @@
         // };
 
         const firebaseConfig = {
-            apiKey: "AIzaSyDVz3tojHmC2rjOFwCJpjSTPoxqiiW3idY",
-            authDomain: "jist-core-member-list.firebaseapp.com",
-            databaseURL: "https://jist-core-member-list-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "jist-core-member-list",
-            storageBucket: "jist-core-member-list.firebasestorage.app",
-            messagingSenderId: "510409441651",
-            appId: "1:510409441651:web:c6106969ad973da34b8506",
-            measurementId: "G-F0TRMH2N5H"
+            apiKey: "AIzaSyABascDsqlmRGeX17kU7Okyl5LUIND8gr8",
+            authDomain: "codingclubform.firebaseapp.com",
+            databaseURL: "https://codingclubform-default-rtdb.firebaseio.com",
+            projectId: "codingclubform",
+            storageBucket: "codingclubform.firebasestorage.app",
+            messagingSenderId: "288663776352",
+            appId: "1:288663776352:web:e90ce0df47247983092705"
         };
 
         const app = initializeApp(firebaseConfig);
@@ -167,7 +167,7 @@
                     showError("❌ Error: " + error.message);
                 });
         });
-        
+
         function showError(message, fieldId) {
 
             progressBar.style.display = "none";
