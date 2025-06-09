@@ -138,9 +138,9 @@
 
 
 
-            set(ref(db, "users/" + email), {
-                email,
+            set(ref(db, "users/" + name), {
                 name,
+                email,
                 phone,
                 department,
                 year,
@@ -167,7 +167,7 @@
                     showError("❌ Error: " + error.message);
                 });
         });
-
+        
         function showError(message, fieldId) {
 
             progressBar.style.display = "none";
