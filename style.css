@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Cairo');
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap'); 
 * {
     margin: 0;
     padding: 0;
@@ -278,7 +278,7 @@ body {
 }
 
 .card-title .highlight {
-    color: #00FFB3;
+    color: #cfb542;
     font-weight: 300;
     font-size: 1.8rem;
 }
@@ -438,12 +438,13 @@ body {
 }
 
 .outro h3 {
-    font-family: "Pacifico";
+    font-family: "DM Serif Display";
     width: 78%;
     text-align: center;
     line-height: 1.4;
     font-weight: 100;
     text-transform: capitalize;
+    font-size: 30px;
 
 
 }
@@ -769,14 +770,28 @@ p {
 }
 
 #footer a {
-    color: #00acee;
     text-decoration: none;
     margin: 5px;
     display: inline-block;
 }
 
 #footer span {
+    color: lightskyblue;
     font-weight: bold;
+    
+}
+#footer a i {
+    /* color: red; */
+    font-size: 30px;
+}
+.ri-instagram-fill{
+    color: rgb(226, 36, 172);
+}
+.ri-github-fill{
+    color: gray;
+}
+.ri-linkedin-box-fill{
+    color: #38bdf8;
 }
 
 #footer .contact,
@@ -875,8 +890,9 @@ p {
     }
     .card-wrapper{
         /* background-color: #ffd699; */
-        background-image: url(https://i.postimg.cc/fbTwtYGC/9150214.jpg);
+        background-image: url(image/bgc.jpg);
         object-fit: cover;
+        /* background: radial-gradient(circle, white 0%, #044117 100%); */
         border-radius: 15px;
     }
 }
