@@ -36,7 +36,8 @@
             <input type="number" id="phone" placeholder="Phone Number" class="phone" required>
             <input type="text" id="department" placeholder="Department" class="department" required>
             <input type="number" id="year" placeholder="Academic year" class="year" required>
-            <input type="text" id="position" placeholder="Position applying for" class="position" required>
+            <!-- <input type="text" id="position" placeholder="Position applying for" class="position" required> -->
+             <input type="text" id="position" placeholder="Position? (App ,Web, Event, Project, Design)" class="position" required>
             <input type="text" id="linkedin" placeholder="LinkedIn Profile" class="linkedin">
             <input type="text" id="github" placeholder="GitHub Profile" class="github">
             <textarea name="skills" id="skills" placeholder=" Your skills for applying in field" class="skills"
@@ -138,8 +139,8 @@
 
 
             set(ref(db, "users/" + email), {
-                name,
                 email,
+                name,
                 phone,
                 department,
                 year,
