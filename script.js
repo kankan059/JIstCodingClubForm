@@ -299,7 +299,7 @@ let kk = () => {
   }
 
   gsapIntro();
-  // gsapSecond();
+  gsapSecond();
   gsapOutro();
   // gsapStructure();
   gsapStructure();
