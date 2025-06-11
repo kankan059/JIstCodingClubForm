@@ -929,6 +929,7 @@ p {
         height: 100%;
         display: block;
         object-fit: contain;
+        will-change: transform;
     }
 
 

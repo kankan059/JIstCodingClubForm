@@ -314,9 +314,9 @@ let kk = () => {
       scrollTrigger: {
         trigger: ".structure-lead",
         pin: true,
-        scrub: 0.3,
-        start: "top top",
-        end: () => "+=" + (contents.scrollWidth - window.innerWidth),
+        scrub: 0.1,
+        start: "top 0",
+        end: "top -70%",
         invalidateOnRefresh: true,
         pinType: "transform", // important for mobile
       },
