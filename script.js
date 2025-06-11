@@ -307,7 +307,7 @@ let kk = () => {
         scroll: "body",
         trigger: ".structure-lead",
         pin: true,
-        scrub: 1,
+        scrub: 0.1,
         start: "top 0%",
         end: "top -70%",
         duration: 0.6,
