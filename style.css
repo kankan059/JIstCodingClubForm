@@ -918,12 +918,17 @@ p {
         width: 300%;
     }
 
+    .struct-image {
+        width: 300vw;
+        /* Make it extra wide */
+        height: 100%;
+    }
 
     .struct-image img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
-        /* font-size: small; */
+        object-fit: contain;
     }
 
 

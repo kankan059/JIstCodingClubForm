@@ -302,20 +302,24 @@ let kk = () => {
     let contents = document.querySelector(
       ".structure-lead .struct-image > img"
     );
+
+    // Refresh ScrollTrigger after full load
+    window.addEventListener("load", () => {
+      ScrollTrigger.refresh();
+    });
+
     gsap.to(contents, {
-      scrollTrigger: {
-        scroll: "body",
-        trigger: ".structure-lead",
-        pin: true,
-        scrub: 0.1,
-        start: "top 0%",
-        end: "top -70%",
-        duration: 0.6,
-        // markers: true,
-      },
-      // xPercent: -50 * (contents.length - 1),
       x: () => -(contents.scrollWidth - window.innerWidth),
       ease: "none",
+      scrollTrigger: {
+        trigger: ".structure-lead",
+        pin: true,
+        scrub: 0.3,
+        start: "top top",
+        end: () => "+=" + (contents.scrollWidth - window.innerWidth),
+        invalidateOnRefresh: true,
+        pinType: "transform", // important for mobile
+      },
     });
   }
 
