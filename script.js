@@ -311,7 +311,7 @@ let kk = () => {
         start: "top 0%",
         end: "top -70%",
         duration: 0.6,
-        markers: true,
+        // markers: true,
       },
       // xPercent: -50 * (contents.length - 1),
       x: () => -(contents.scrollWidth - window.innerWidth),
