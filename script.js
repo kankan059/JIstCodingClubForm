@@ -315,7 +315,7 @@ let kk = () => {
         trigger: ".structure-lead",
         pin: true,
         scrub: 0.1,
-        start: "top 0",
+        start: "top 15%",
         end: "top -70%",
         invalidateOnRefresh: true,
         pinType: "transform", // important for mobile
