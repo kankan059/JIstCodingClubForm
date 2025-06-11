@@ -909,7 +909,7 @@ p {
 
     .structure-lead {
         overflow-x: auto;
-        height: 100vh;
+        height: 60vh;
         overflow: hidden;
         position: relative;
         display: flex;
