@@ -298,14 +298,33 @@ let kk = () => {
     );
   }
 
+  function gsapStrucureLead() {
+    let contents = document.querySelector(
+      ".structure-lead .struct-image > img"
+    );
+    gsap.to(contents, {
+      scrollTrigger: {
+        scroll: "body",
+        trigger: ".structure-lead",
+        pin: true,
+        scrub: 1,
+        start: "top 0%",
+        end: "top -70%",
+        duration: 0.6,
+        markers: true,
+      },
+      // xPercent: -50 * (contents.length - 1),
+      x: () => -(contents.scrollWidth - window.innerWidth),
+      ease: "none",
+    });
+  }
+
   gsapIntro();
   gsapSecond();
   gsapOutro();
-  // gsapStructure();
   gsapStructure();
+  gsapStrucureLead();
 };
-
-// let button = document.querySelector('.container')
 
 ezaz();
 kk();
