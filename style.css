@@ -435,7 +435,7 @@ body {
 }
 
 .outro {
-    height: 100vh;
+    height: 65vh;
     padding: 1.5em;
     display: flex;
     flex-direction: column;
