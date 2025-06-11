@@ -127,16 +127,16 @@
             const linkedin = document.getElementById("linkedin").value.trim();
             const github = document.getElementById("github").value.trim();
             const skills = document.getElementById("skills").value.trim();
-
-
-            if (isNaN(year) || year < 1 || year > 4) {
-                return showError("Year must be between 1 and 4", "year");
-            }
+            
             if (!name) return showError("Name is required", "name");
             if (!email) return showError("Email is required", "email");
             if (!phone) return showError("Phone number is required", "phone");
             if (!department) return showError("Department is required", "department");
             if (!year) return showError("Year is required", "year");
+
+            if (isNaN(year) || year < 1 || year > 4) {
+                return showError("Year must be between 1 and 4", "year");
+            }
             if (!position) return showError("Position is required", "position");
             if (!skills) return showError("Please describe your technical skills", "skills");
 
